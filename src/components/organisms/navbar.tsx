@@ -44,7 +44,7 @@ export function Navbar() {
           <m.span
             whileHover={{ rotate: 8, scale: 1.08 }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
-            className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-white/70 bg-white/70 shadow-lg backdrop-blur-xl"
+            className="flex h-9 w-9 items-center justify-center"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

@@ -1,19 +1,42 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
+// Font di-self-host dari public/fonts (unduhan Google Fonts, subset latin + latin-ext).
+// Dipakai next/font/local — bukan next/font/google — supaya build TIDAK butuh
+// akses jaringan ke fonts.googleapis.com. Ini yang membuat build gagal di Vercel.
 // Space Grotesk: heading geometris modern dengan kerning rapat (otoritas visual)
-const heading = Space_Grotesk({
-  subsets: ["latin"],
+const heading = localFont({
+  src: [
+    { path: "../public/fonts/space-grotesk-400-latin.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/space-grotesk-500-latin.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/space-grotesk-600-latin.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/space-grotesk-700-latin.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/space-grotesk-400-latin-ext.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/space-grotesk-500-latin-ext.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/space-grotesk-600-latin-ext.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/space-grotesk-700-latin-ext.woff2", weight: "700", style: "normal" },
+  ],
   variable: "--font-heading",
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 // Plus Jakarta Sans: body font bersih & sangat legible
-const body = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+const body = localFont({
+  src: [
+    { path: "../public/fonts/plus-jakarta-sans-400-latin.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/plus-jakarta-sans-500-latin.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/plus-jakarta-sans-600-latin.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/plus-jakarta-sans-700-latin.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/plus-jakarta-sans-800-latin.woff2", weight: "800", style: "normal" },
+    { path: "../public/fonts/plus-jakarta-sans-400-latin-ext.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/plus-jakarta-sans-500-latin-ext.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/plus-jakarta-sans-600-latin-ext.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/plus-jakarta-sans-700-latin-ext.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/plus-jakarta-sans-800-latin-ext.woff2", weight: "800", style: "normal" },
+  ],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
