@@ -28,6 +28,16 @@ export const metadata: Metadata = {
     "multiplatform apps",
     "one-time payment software",
   ],
+  // Logo brand dipakai sebagai favicon / ikon tab browser.
+  // app/icon.svg (konvensi App Router) juga otomatis di-inject oleh Next.
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: ["/favicon.svg"],
+    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
